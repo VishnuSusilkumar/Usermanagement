@@ -1,0 +1,35 @@
+<%- include('../layouts/header.ejs') %>
+
+
+<div class="login-container">
+    <h1>Sign in</h1>
+    <p class="please">Please enter your details:</p>
+
+    <%
+    
+        if(typeof message !== 'undefined'){
+            %>
+                <h4><%= message %></h4>
+            <%
+        }
+    
+    %>
+    
+    <form action="/login" method="post">
+
+        <label for="username">Email Address</label>
+        <input type="email" name="email" required placeholder="Enter Email">
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" required placeholder="Enter Password">
+        <br><br>
+        <input type="submit" value="Login">
+    
+        </form>
+
+        <p>Don't have an account? <a href="/register">Sign up</a></p>
+
+
+
+
+<%- include('../layouts/footer.ejs') %>

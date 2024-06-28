@@ -8,6 +8,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install the app dependencies
+RUN npm install
+
+# Install nodemon globally
 RUN npm install -g nodemon
 
 # Copy the rest of the application code
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["nodemon", "index.js"]
